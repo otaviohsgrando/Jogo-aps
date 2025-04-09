@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz APS - Starfield</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .quiz-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      width: 100%;
+    }
+    h2 {
+      color: #333;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .button {
+      background: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: #2980b9;
+    }
+    .result {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #2ecc71;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>Quiz APS - Barbara Starfield</h2><form id="quizForm">
+  <div class="question">
+    <p><strong>1. </strong>Léia, 21 anos, negra, analfabeta funcional e profissional do sexo, procura um centro de saúde... (texto completo acima). Segundo Barbara Starfield, o atributo essencial da APS <strong>NÃO</strong> contemplado por esse centro de saúde é:</p>
+    <div class="options">
+      <label><input type="radio" name="q1" value="a"> a) equidade</label>
+      <label><input type="radio" name="q1" value="b"> b) porta aberta</label>
+      <label><input type="radio" name="q1" value="c"> c) integralidade</label>
+      <label><input type="radio" name="q1" value="d"> d) universalidade</label>
+    </div>
+  </div>
+
+  <div class="question">
+    <p><strong>2. </strong>Uma equipe de saúde da família toma conhecimento da presença de 34 venezuelanos refugiados... Segundo Barbara Starfield, os atributos derivados da APS que precisam ser mobilizados são:</p>
+    <div class="options">
+      <label><input type="radio" name="q2" value="a"> a) equidade e universalização</label>
+      <label><input type="radio" name="q2" value="b"> b) orientação aos direitos humanos e sociais</label>
+      <label><input type="radio" name="q2" value="c"> c) orientação familiar e comunitária e competência cultural</label>
+      <label><input type="radio" name="q2" value="d"> d) combate à pobreza extrema, à exclusão social e ao preconceito institucional</label>
+    </div>
+  </div>
+
+  <button type="button" class="button" onclick="verificarRespostas()">Finalizar Quiz</button>
+  <div id="resultado" class="result"></div>
+</form>
+
+  </div>  <script>
+    function verificarRespostas() {
+      const respostasCorretas = {
+        q1: 'b',
+        q2: 'c'
+      };
+
+      let acertos = 0;
+      const form = document.forms["quizForm"];
+
+      if (form.q1.value === respostasCorretas.q1) acertos++;
+      if (form.q2.value === respostasCorretas.q2) acertos++;
+
+      const resultado = document.getElementById("resultado");
+      resultado.innerText = `Você acertou ${acertos} de 2 perguntas!`;
+    }
+  </script></body>
+</html>
